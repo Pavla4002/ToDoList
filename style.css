@@ -16,9 +16,9 @@ a,li{
 }
 .all-content{
     width: 65%;
+   height: 100vh;
     margin: 0 auto;
     background-color: #87CEFA;
-    height:100vh;
 }
 .add-task{
     padding: 5%;
@@ -115,4 +115,7 @@ li{
 }
 .greenTask{
     background-color: #bbfabb;
+}
+.titleTaskLi{
+    cursor: pointer;
 }
