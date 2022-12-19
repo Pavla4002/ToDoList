@@ -19,22 +19,21 @@ if(localStorage.getItem('toDoList')){
 buttonAdd.addEventListener('click',function (){
     function idDetermine (){
         if(arrObj.length === 0) {
-            return arrObj.length
+            return arrObj.length;
         }
         else {
-            // return arrObj[-1].id + 1
-            console.log(arrObj[-1].id)
+            let idLastElement = arrObj[arrObj.length -1];
+            return idLastElement.id +1
         }
     }
 
     let obj = {
-        id:idDetermine() , // Было просто arrObj.length
+        id:idDetermine(), // Было просто arrObj.length idDetermine()
         name:inputTitleTask.value,
         data: inputDataTask.value,
         status:false
     }
     arrObj.push(obj);
-    console.log(  arrObj);
     displayMessages(); // Отображение данного объекта
     localStorage.setItem('toDoList', JSON.stringify(arrObj)) //перевод информациив JSON для сохранения в локальном хранилище
 })
@@ -59,12 +58,13 @@ function displayMessages(){
 
 // Функция для выделения выполненных задач зеленым цветом
 listToDo.addEventListener('click',function (e){
+    //Add greenTask class
     let liEvent = e.target; // элемент, который поймал клик
     if (liEvent && liEvent.classList.contains('titleTaskLi')) {
         let parent = liEvent.closest('.list')
         parent.classList.toggle('greenTask');
     }
-
+    //Assign the value true or false
     let elementLi =liEvent.closest('.list');
     let idLi = elementLi.getAttribute('id');
     if(elementLi.classList.contains('greenTask')){
@@ -72,29 +72,31 @@ listToDo.addEventListener('click',function (e){
     }else {
         arrObj[idLi].status= false;
     }
-    localStorage.setItem('toDoList', JSON.stringify(arrObj));
-    console.log( listToDo);
 
-   // Удалени элемнта
+    // Удалени элемнта
     if (liEvent && liEvent.classList.contains('delete')) {
-    let delElement = liEvent.closest('.list');
-    let idDelElem = delElement.getAttribute('id');
-    delElement.remove();
-    console.log(listToDo);
-    console.log(idDelElem);
-    arrObj.splice(idDelElem,1);
-    console.log(listToDo);
-    console.log(arrObj);
-    localStorage.setItem('toDoList', JSON.stringify(arrObj));
-        // if(arrObj.length === 0){
-        //     localStorage.clear();
-        // }
-        // else{
-        //     localStorage.setItem('toDoList', JSON.stringify(arrObj));
-        // }
-    }
+        let rezConfirm = confirm('Вы точно хотите удалить запись?');
+        if(rezConfirm){
+            let delElement = liEvent.closest('.list');
+            let idDelElem = delElement.getAttribute('id');
+            delElement.remove();
+            arrObj.splice(idDelElem,1);
+            localStorage.setItem('toDoList', JSON.stringify(arrObj));
+            if(arrObj.length === 0){
+                localStorage.clear();
+                console.log(listToDo);
+            }
+            else{
+                localStorage.setItem('toDoList', JSON.stringify(arrObj));
+                console.log(listToDo)
+            }
+        }
+        }
 
+    // Editing an entry
 
+        localStorage.setItem('toDoList', JSON.stringify(arrObj));
+        displayMessages();
 })
 
 

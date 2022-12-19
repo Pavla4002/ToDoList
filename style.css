@@ -16,7 +16,7 @@ a,li{
 }
 .all-content{
     width: 65%;
-   height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
     background-color: #87CEFA;
 }
@@ -60,7 +60,7 @@ a,li{
 }
 .button-add-save:hover{
     cursor: pointer;
-    background-color: #025202;
+    background-color: #089408;
 }
 .add-task input{
     margin-top: 1%;
@@ -118,4 +118,9 @@ li{
 }
 .titleTaskLi{
     cursor: pointer;
+}
+
+/*Кнопка редактирования*/
+.button-edit{
+
 }
