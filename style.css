@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Montserrat:wght@100;200;300;400;500&family=Open+Sans:wght@300;600&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300;1,400&family=Raleway:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Ubuntu:wght@300;400&family=Zen+Kaku+Gothic+Antique&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Montserrat:wght@100;200;300;400;500&family=Open+Sans:wght@300;600&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300;1,400&family=Raleway:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Ubuntu:wght@300;400&family=Zen+Kaku+Gothic+Antique&display=swap');*/
 *{
     box-sizing: border-box;
     padding: 0;
@@ -7,8 +7,13 @@
 body{
     background-color: #fff;
 }
+@font-face {
+    font-family: 'Nunito';
+    src: local("Nunito");
+}
+
 body li,a,span,div{
-   font-family: 'Montserrat';
+   font-family: 'Nunito',sans-serif;
 }
 a,li{
     text-decoration: none;
@@ -21,7 +26,7 @@ a,li{
     background-color: #87CEFA;
 }
 .add-task{
-    padding: 5%;
+    padding:5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +35,7 @@ a,li{
     margin: 0 auto;
     height: 27vh;
     width: 90%;
-    padding-top: 10%;
+    padding-top:10%;
 }
 .title-add-box{
     width: 100%;
@@ -122,5 +127,15 @@ li{
 
 /*Кнопка редактирования*/
 .button-edit{
-
+    background-color: dodgerblue;
+    margin-top:2%;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    font-size: 16px;
+}
+.none{
+    display: none;
 }

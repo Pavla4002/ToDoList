@@ -7,8 +7,8 @@
 </head>
 <body>
 <div class="all-content">
-    <div class="add-task">
-        <div class="title-add-box"><span>Добавь или отредактируй задачу</span></div>
+        <form class="add-task">
+            <div class="title-add-box"><span>Добавь или отредактируй задачу</span></div>
             <div class="enter">
                 <label for="title">Введите название</label>
                 <input id="title" type="text" required>
@@ -17,13 +17,14 @@
                 <label for="data">Введите дату окончания</label>
                 <input  id="data" type="text" required>
             </div>
-            <button class="button-add-save" type="submit" id="buttonSubmit">Добавить</button>
-    </div>
+            <button class="button-add-save" type="reset" id="buttonSubmit">Добавить</button>
+            <button class="button-edit none" type="reset" id="buttonSubmit1">Редактировать</button>
+
+        </form>
     <div class="title"><span> ToDo List</span></div>
     <ul class="list-to-do">
 
     </ul>
-    <div class="jsCodeTry"></div>
 </div>
 <script src="main.js"></script>
 </body>
