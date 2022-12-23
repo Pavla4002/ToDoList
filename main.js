@@ -27,7 +27,7 @@ buttonEditAdd.addEventListener('click',function (){
     }
 
     let obj = {
-        id:idDetermine(), // Было просто arrObj.length idDetermine()
+        id:idDetermine (), // Было просто arrObj.length idDetermine()
         name:inputTitleTask.value,
         data: inputDataTask.value,
         status:false

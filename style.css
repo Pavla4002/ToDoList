@@ -47,6 +47,7 @@ a,li{
     font-size: 20px;
 }
 .enter{
+    width: 80%;
     height: 8vh;
     display: flex;
     flex-direction: column;
@@ -55,7 +56,7 @@ a,li{
 }
 .button-add-save{
     margin-top:2%;
-    width: 120px;
+    min-width: 120px;
     height: 40px;
     background-color: #0ebd0e;
     border-radius: 10px;
@@ -67,11 +68,20 @@ a,li{
     cursor: pointer;
     background-color: #089408;
 }
-.add-task input{
+.block-input{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.enter input{
     margin-top: 1%;
     padding: 0 2%;
-    width: 20vw;
-    height: 5vh;
+    min-width: 80%;
+    max-width: 100%;
+    max-height: 5vh;
+    min-height: 5vh;
     background-color: #ffff;
     outline: #D5DDDD;
     border: #D5DDDD;
@@ -138,4 +148,152 @@ li{
 }
 .none{
     display: none;
+}
+
+@media screen and (min-width: 375px){
+    span,a,div{
+        font-size: 12px;
+    }
+    .add-task{
+        height: 35vh;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+    }
+    .buttons-list{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .list-to-do li button{
+      font-size: 12px;
+        width: 70%;
+    }
+    .list-to-do li button:nth-child(1){
+    margin-bottom: 2%;
+    }
+    .list{
+        height: 10vh;
+    }
+    .all-content{
+        width: 100vw;
+        min-height: 100vh;
+    }
+    .block-input{
+        margin-top: 10%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .add-task button{
+        margin-top: 5%;
+        height: 40px;
+        font-size: 12px;
+    }
+    .title-add-box span{
+        font-size: 15px;
+    }
+    .title-add-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 425px){
+    .all-content{
+        width: 100vw;
+        min-height: 100vh;
+    }
+    .block-input{
+        margin-top: 1%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .add-task button{
+        margin-top: 5%;
+        min-height: 30px;
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (min-width: 768px){
+    .all-content{
+        width: 80%;
+        margin: 0 auto;
+        min-height: 100vh;
+    }
+    .block-input{
+        width: 80%;
+        margin-top: 0%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .add-task{
+        height: 35vh;
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content: space-between;
+    }
+    span,a,div{
+        font-size: 16px;
+    }
+    .buttons-list{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .list-to-do li .buttons-list{
+       display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+    }
+    .list-to-do li button{
+        font-size: 16px;
+        width: 35%;
+    }
+    .list-to-do li button:nth-child(1){
+        margin-bottom: 0;
+        margin-right: 2%;
+    }
+    .list{
+        height: 10vh;
+    }
+
+    .add-task button{
+        margin-top: 1%;
+        height: 40px;
+        font-size: 16px;
+    }
+    .title-add-box span{
+        font-size: 30px;
+    }
+    .title-add-box{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .title span{
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 1500px){
+    .all-content{
+        width: 1200px;
+        margin: 0 auto;
+    }
 }

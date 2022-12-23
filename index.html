@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="all-content">
-        <form class="add-task">
+        <form class="add-task" action="#">
             <div class="title-add-box"><span>Добавь или отредактируй задачу</span></div>
-            <div class="enter">
-                <label for="title">Введите название</label>
-                <input id="title" type="text" required>
-            </div>
-            <div class="enter">
-                <label for="data">Введите дату окончания</label>
-                <input  id="data" type="date" required>
+            <div class="block-input">
+                <div class="enter">
+                    <label for="title">Введите название</label>
+                    <input id="title" type="text" required>
+                </div>
+                <div class="enter">
+                    <label for="data">Введите дату окончания</label>
+                    <input  id="data" type="date" required>
+                </div>
             </div>
             <button class="button-add-save" type="reset" id="buttonSubmit">Добавить</button>
             <button class="button-edit none" type="reset" id="buttonSubmit1">Редактировать</button>
