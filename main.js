@@ -5,7 +5,6 @@ let inputDataTask = document.querySelector('#data');
 let listToDo = document.querySelector('.list-to-do');
 let buttonEditAdd = document.querySelector('.button-add-save');
 let buttonSave = document.querySelector('.button-edit');
-
 let arrObj= [];
 
 // Если в LocalStorage есть информация то он нам ее дает для отрисовки
@@ -30,7 +29,8 @@ buttonEditAdd.addEventListener('click',function (){
         id:idDetermine (), // Было просто arrObj.length idDetermine()
         name:inputTitleTask.value,
         data: inputDataTask.value,
-        status:false
+        status:false,
+        visibility:true
     }
 
     arrObj.push(obj);
@@ -45,7 +45,7 @@ function displayMessages(){
     arrObj.forEach(function (item,i){
         // добавление новых li к уже существующим или в пустой список
         message += `   
-     <li class="list ${ item.status === true ? 'greenTask' : '' }" id="${i}">
+     <li class="list ${ item.status === true ? 'greenTask' : '' } ${ item.visibility === false ? 'none' : '' }" id="${i}">
             <span class="titleTaskLi">${item.name}</span>
              <span class="dataTask">${item.data}</span>
             <div class="buttons-list">
@@ -77,14 +77,17 @@ listToDo.addEventListener('click',function (e){
     }
     assignTrueFalse();
 
-    // Удалени элемнта
+    // Удалени элемнта (удаляем только из просмотра, а не из локал сторедж)
     function removeElement (rezConfirm){
             if(rezConfirm){
                 let delElement = liEvent.closest('.list');
                 let idDelElem = delElement.getAttribute('id');
-                delElement.remove();
-                arrObj.splice(idDelElem,1);
-                localStorage.setItem('toDoList', JSON.stringify(arrObj));
+                // delElement.remove();
+                // arrObj.splice(idDelElem,1);
+               delElement.classList.add('none');
+               arrObj[idDelElem].visibility = false;
+                console.log(delElement)
+                // localStorage.setItem('toDoList', JSON.stringify(arrObj));
                 if(arrObj.length === 0){
                     localStorage.clear();
                     console.log(listToDo);
@@ -125,9 +128,20 @@ listToDo.addEventListener('click',function (e){
     }
 
 
+
     // сохранение в хранилище и перерисовка
         localStorage.setItem('toDoList', JSON.stringify(arrObj));
         displayMessages();
 })
-
-
+// async function getTodos(){
+//     const response = await fetch('http://localhost:3000/todos');
+//     const data = await response.json();
+//     console.log(data);
+// }
+//
+// getTodos();
+//
+// async function nadoShow(){
+//     return 1
+// }
+// nadoShow().then(alert);
